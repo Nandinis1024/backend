@@ -18,7 +18,7 @@ const productValiditySchema = mongoose.Schema(
             required: true
         },
         validityInDays: { 
-            type: Number
+            type: Number,
         },
         validityOptionTitle: { 
             type: String

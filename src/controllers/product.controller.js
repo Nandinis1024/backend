@@ -170,6 +170,10 @@ const changeVisibilityProduct = async (req, res) => {
     }
 }
 
+const getCsrfToken = (req, res) => {
+    res.status(200).json({ csrfToken: res.locals.csrfToken });
+};
+
 const createCheckoutSession = async (req, res) => {
     const {quantity, productPrice, productName, userId} = req.body;
     const session = await stripe.checkout.sessions.create({
@@ -202,5 +206,6 @@ module.exports = {
     getProductsValidity,
     deleteProduct,
     changeVisibilityProduct,
+    getCsrfToken,
     createCheckoutSession
 };

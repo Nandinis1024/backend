@@ -15,9 +15,11 @@ const productFeaturesSchema = mongoose.Schema(
         },
         title:{
             type: String,
+            required: true
         },
         description:{
             type: String,
+            required: true
         },
         createdBy: { 
             type: String
@@ -31,30 +33,6 @@ const productFeaturesSchema = mongoose.Schema(
     }
 )
 
-// productFeaturesSchema.plugin(toJSON);
-
-
-// const productFeaturesJoiSchema = Joi.object({
-//     _id: Joi.required(),
-//     createdAt: Joi.required(),
-//     updatedAt: Joi.required(),
-//     isInactive: Joi.boolean().default(false),
-//     isVisibleOnUi: Joi.boolean().default(true),
-//     title: Joi.string().required(),
-//     description: Joi.string(),
-//     createdBy: Joi.string(),
-//     updatedBy: Joi.string(),
-// });
-
-
-// productFeaturesSchema.pre('save', async function(next) {
-//     try {
-//         await productFeaturesJoiSchema.validateAsync(this.toObject());
-//         next();
-//     } catch (error) {
-//         next(error);
-//     }
-// });
 
 const ProductFeatures = mongoose.model('ProductFeatures', productFeaturesSchema);
 
